@@ -1,52 +1,43 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - Movie App</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-      <!--  @Styles.Render("~/Content/css")
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Movie App</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <!--  @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")-->
-        @Styles.Render("~/Content/bootstrap.css")
-        @Styles.Render("~/Content/DT_Twitter.css")
-    </head>
-    <body>
-        
-            
-                <div class="hero-unit">
-                
-                   <h1> @Html.ActionLink("Movies", "Index", "Home") </h1>
-                    
-                </div>
-                   <div class="navbar">
-                    <div class="navbar-inner">
-                        <ul class="nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                           <li> @Html.Partial("_LoginPartial") </li>
-                        </ul>
-                        </div>
-                    </div>
-          
-       
-        <div id="body">
-            @RenderSection("featured", required: false)
-            
-                @RenderBody()
-            
+    @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/DT_Twitter.css")
+</head>
+<body>
+    <div class="hero-unit">
+        <h1>
+            @Html.ActionLink("Movies", "Index", "Home")
+        </h1>
+    </div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.Partial("_LoginPartial") </li>
+            </ul>
         </div>
-        
-            
-            
-         <footer>
+    </div>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        @RenderBody()
+    </div>
+    <hr />
+    <footer>
+
         <p>&copy; @DateTime.Now.Year - ORB Software and Systems</p>
       </footer>
-        
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/Scripts/jquery.dataTables.js")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery.dataTables.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
 </html>
